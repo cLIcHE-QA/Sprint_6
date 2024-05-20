@@ -32,6 +32,15 @@ class MainPage(BasePage):
     def click_to_cookie_button(self):
         self.click_to_element(BasePageLocators.COOKIE_BUTTON)
 
+    @allure.step("Проскроллить до кнопки «Заказать» внизу страницы")
+    def scroll_to_order_button_down(self):
+        self.scroll_to_element(MainPageLocators.ORDER_BUTTON_DOWN)
+        return self.find_definite_element(MainPageLocators.ORDER_BUTTON_DOWN)
+
+    @allure.step("Нажать на кнопку «Заказать» внизу страницы")
+    def click_to_order_button_down(self):
+        self.click_to_element(MainPageLocators.ORDER_BUTTON_DOWN)
+
     @allure.step("Проскроллить до блока «Вопросы о важном»")
     def scroll_to_questions(self):
         self.scroll_to_element(MainPageLocators.IMPORTANT_QUESTION)

@@ -2,30 +2,11 @@ import random
 
 import allure
 
-from locators.base_page_locators import BasePageLocators
-from locators.main_page_locators import MainPageLocators
 from locators.order_page_locators import OrderPageLocators
 from pages.base_page import BasePage
 
 
 class OrderPage(BasePage):
-
-    @allure.step("Нажать на кнопку «Заказать»")
-    def click_to_order_button_header(self):
-        self.click_to_element(BasePageLocators.ORDER_BUTTON)
-
-    @allure.step("Проскроллить до кнопки «Заказать» внизу страницы")
-    def scroll_to_order_button_down(self):
-        self.scroll_to_element(MainPageLocators.ORDER_BUTTON_DOWN)
-        return self.find_definite_element(MainPageLocators.ORDER_BUTTON_DOWN)
-
-    @allure.step("Нажать на кнопку «Заказать» внизу страницы")
-    def click_to_order_button_down(self):
-        self.click_to_element(MainPageLocators.ORDER_BUTTON_DOWN)
-
-    @allure.step("Нажать на кнопку «Да все привыкли»")
-    def click_to_cookie_button(self):
-        self.click_to_element(BasePageLocators.COOKIE_BUTTON)
 
     @allure.step("Заполнить поле «Имя»")
     def set_name_to_field(self, text):
